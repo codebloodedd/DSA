@@ -22,3 +22,9 @@ def big_countries(world: pd.DataFrame) -> pd.DataFrame:
     big_country = world[is_big][["name", "population", "area"]]
 
     return big_country
+
+def find_products(products: pd.DataFrame) -> pd.DataFrame:
+    is_good = (products["low_fats"] == "Y") & (products["recyclable"] == "Y")
+
+    good_product = products[is_good][["product_id"]]
+    return good_product
